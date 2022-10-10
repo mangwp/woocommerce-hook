@@ -1,0 +1,16 @@
+/**
+ * Change page titles
+ */
+function bk_title_order_received( $title, $id ) {
+	if ( is_lost_password_page() && get_the_ID() === $id ) {
+		$title = "Passwort Forgot";
+	}
+
+	return $title;
+}
+
+add_filter( 'the_title', 'bk_title_order_received', 10, 2 );
+
+
+
+https://woocommerce.github.io/code-reference/files/woocommerce-includes-wc-conditional-functions.html
